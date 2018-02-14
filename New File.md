@@ -293,11 +293,10 @@ def nonlin(x,deriv = False):
 <ul>
 <li>
 <p>Our variables, or features that predict the output</p>
-<pre><code>input = np.array([[0,1,0,1],  	# 0
-                   [1,1,0],  	# 1
-                   [0,0,1],  	# 0
-                   [1,1,1],  	# 1
-                   [0,1,0]]) 	# 0
+<pre><code>_input = np.array([  [0,0,1],
+                [0,1,1],
+                [1,0,1],
+                [1,1,1] ])
 </code></pre>
 </li>
 <li>
@@ -342,11 +341,7 @@ def nonlin(x,deriv = False):
 </tbody>
 </table><hr>
 <h3 id="output-vector--y-">Output Vector ( Y )</h3>
-<pre><code>output = np.array([[0],
-                  [1],
-                  [0],
-                  [1],
-                  [0]])
+<pre><code>output = np.array([[0,0,1,1]]).T
 </code></pre>
 
 <table>
@@ -399,8 +394,8 @@ for j in range(70000):
     # Layers 
     
     # Forward Propogate:
-    layer1 = input
-    layer2 = activate(np.dot(layer1, synapse))
+    layer1 = _input
+    layer2 = activate(np.dot(layer1,synapse))
 
     # Layer 1 Error
     error = output - layer2
