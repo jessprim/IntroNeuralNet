@@ -278,7 +278,7 @@ This is also just one of many amazing techniques we can leverage to make predict
 <hr>
 <h3 id="activation-function">Activation Function</h3>
 <pre><code># sigmoid function
-def nonlin(x,deriv = False):
+def activate(x,deriv = False):
    if(deriv == True):
        return x*(1-x)
    return 1/(1+np.exp(-x)) 
@@ -315,33 +315,29 @@ def nonlin(x,deriv = False):
 <tbody>
 <tr>
 <td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0</td>
 <td>0</td>
 <td>1</td>
 </tr>
 <tr>
-<td>1</td>
+<td>0</td>
 <td>1</td>
 <td>1</td>
 </tr>
 <tr>
-<td>0</td>
 <td>1</td>
 <td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
 </tr>
 </tbody>
 </table><hr>
 <h3 id="output-vector--y-">Output Vector ( Y )</h3>
-<pre><code>output = np.array([[0,0,1,1]]).T
+<pre><code>output = np.array([[0,0,1,1]]).T 
+# Where .T means to Transpose
 </code></pre>
 
 <table>
@@ -355,16 +351,13 @@ def nonlin(x,deriv = False):
 <td>0</td>
 </tr>
 <tr>
-<td>1</td>
-</tr>
-<tr>
 <td>0</td>
 </tr>
 <tr>
 <td>1</td>
 </tr>
 <tr>
-<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table><hr>
